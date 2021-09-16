@@ -1,1 +1,1 @@
-Using https://restcountries.eu/, I an app with information of each contry in the world.
+Using https://restcountries.eu/, I have build an app with informations of each contry in the world.
