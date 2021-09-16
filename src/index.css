@@ -1,13 +1,376 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Nunito', sans-serif;
+    box-sizing: border-box;
+}
+.toggle{
+    cursor: pointer;
+    width: 40px;
+    height: 30px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navLight{
+    background-color: hsl(0, 0%, 95%);
+    color:black;
+    display: flex;
+    justify-content: space-between;
+    font-size:0.8rem;
+    padding:30px 20px;
+    margin-bottom:20px;
+    border-bottom:1px solid black;
+    box-shadow: 0 4px 2px -2px black;
+    align-items: center;
+}
+.navDark{
+    background-color: hsl(209, 49%, 26%);
+    color:hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: space-between;
+    font-size:0.8rem;
+    padding:30px 20px;
+    margin-bottom:20px;
+    border-bottom:1px solid black;
+    box-shadow: 0 4px 5px -2px white;
+    align-items: center;
+}
+img{
+    width:100%;
+}
+.inputLight{
+    width:100%;
+    height:40px;
+    margin-bottom:5px;
+    border-radius: 5px;
+    outline: none;
+}
+.inputLight:focus{
+    box-shadow: 0px 1px 1px 1px black;
+}
+.inputDark{
+    width:100%;
+    height:40px;
+    margin-bottom:5px;
+    border-radius: 5px;
+    outline: none;
+}
+.inputDark:focus{
+    box-shadow: 0px 1px 10px 1px white;
+}
+
+select{
+    width:45%;
+    height:30px;
+    cursor: pointer;
+    outline: none;
+}
+.container{
+    width:100%;
+    min-height: 100vh;
+    background-color: hsl(0, 0%, 98%);
+}
+.containerDark{
+    width:100%;
+    min-height: 100vh;
+    background-color: hsl(207, 26%, 17%);
+    color:hsl(0, 0%, 100%);
+}
+.firstPageContainer{
+    width:92%;
+    margin:0 auto;
+}
+.countries{
+    border:1px solid black;
+    margin-bottom:15px;
+    margin-top:15px;
+    box-shadow: 0px 1px 1px 1px black;
+    border-radius: 3px;
+}
+.countriesDark{
+    border:1px solid white;
+    margin-bottom:15px;
+    margin-top:15px;
+    box-shadow: 0px 1px 5px 1px wheat;
+    border-radius: 3px;
+}
+.countriesInfo{
+    padding:10px 20px;
+}
+.countriesInfo>p{
+    margin:5px 0px;
+}
+.countriesInfo>h3{
+    margin-bottom:15px;
+}
+.countriesInfoDark{
+    padding:10px 20px;
+    color:hsl(0, 0%, 100%)
+}
+.countriesInfoDark>p{
+    margin:5px 0px;
+}
+.countriesInfoDark>h3{
+    margin-bottom:15px;
+}
+a{
+    text-decoration: none;
+    color: hsl(200, 15%, 8%);
+    cursor: pointer;
+}
+.singleCountry{
+    width:92%;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.singleCountry>.flag>.buttonLight{
+    margin:20px 0px;
+    width:125px;
+    padding:15px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.singleCountry>.flag>.buttonDark{
+    margin:20px 0px;
+    width:125px;
+    padding:15px;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    color:white;
+    background-color: hsl(209, 49%, 26%);
+    border: 1px solid hsl(209, 49%, 26%);
+}
+
+.singleCountry>.detailsFull>.details1>h2{
+    margin-bottom: 20px;
+}
+.singleCountry>div{
+    margin-bottom: 20px;
+}
+.borderCountry{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.borderCountry>p{
+    border:1px solid black;
+    padding:5px 5px;
+    font-size:0.80rem;
+    margin-left:5px;
+    margin-bottom:5px;
+}
+.loop{
+    width:20px;
+    height: 20px;
+    margin-left: -33px;
+    margin-top:10px;
+    object-fit: cover;
+}
+form{
+    display: flex;
+    flex-direction: row;
+}
+.detailsFull>div{
+    margin:10px 0px;
+}
+@media (min-width:500px){
+    .toggle{
+        width: 50px;
+        height: 50px;
+    }
+    .countries{
+        width:100%;
+    }
+    .countriesDark{
+        width:100%;
+    }
+    .countriesInfo{
+        font-size: 2rem;
+    }
+    .countriesInfoDark{
+        font-size: 2rem;
+    }
+    .inputLight{
+        height:50px;
+        font-size:1.2rem;
+    }
+    .inputDark{
+        height:50px;
+        font-size:1.2rem;
+    }
+    select{
+        height:50px;
+        font-size:1.2rem;
+    }
+    .navLight{
+        font-size:1.2rem;
+    }
+    .navDark{
+        font-size:1.2rem;
+    }
+    .singleCountry{
+        font-size:1.5rem;
+    }
+    .singleCountry>img{
+        max-width:100%;
+    }
+    .loop{
+        margin-top:15px;
+    }
+}
+@media (min-width:1050px){
+    .firstPageContainer{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .countriesFlex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+    }
+    .countries{
+        display: flex;
+        flex-direction: column;
+        width:325px;
+        height:400px;
+        margin-left:20px;
+    }
+    .countriesDark{
+        display: flex;
+        flex-direction: column;
+        width:325px;
+        height:400px;
+        margin-left:20px;
+    }
+    .countriesInfo{
+        font-size:1.3rem;
+    }
+    .countriesInfoDark{
+        font-size:1.3rem;
+    }
+    .countries>img{
+        max-width:100%;
+        height: 180px;
+    }
+    .countriesDark>img{
+        max-width:100%;
+        height: 180px;
+    }
+    .searchSelect{
+        display: flex;
+        justify-content: space-around;
+        padding:0 10px;
+    }
+    .inputLight{
+        width:400px;
+        height:50px;
+        font-size:1.5rem;
+    }
+    .inputDark{
+        width:400px;
+        height:50px;
+        font-size:1.5rem;
+    }
+    select{
+        width:300px;
+        height:50px;
+        font-size:1.5rem;
+    }
+    .navLight{
+        font-size:1.5rem;
+        padding:20px 50px;
+    }
+    .navDark{
+        font-size:1.5rem;
+        padding:20px 50px;
+    }
+    .singleCountry{
+        width:85%;
+        margin-top:50px;
+        font-size:1.1rem;
+        display: flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+    }
+    .singleCountry>.flag{
+        width:40%
+    }
+    .detailsFull{
+        width:50%;
+        display: flex;
+        align-self: center;
+        margin-left: 50px;
+    }
+    .detailsFull>.details1{
+        width:55%;
+        align-self: center;
+    }
+    .detailsFull>.details2{
+        width: 45%;
+        align-self: center;
+    }
+    .borderCountry{
+        font-size: 1.2rem;
+    }
+    .borderCountry>p{
+        font-size: 1rem;
+    }
+    .singleCountry>.flag>.buttonLight{
+        font-size: 1.3rem;
+        padding:20px;
+        width: 150px;
+        background-color: hsl(0, 0%, 95%);
+    }
+    .singleCountry>.flag>.buttonDark{
+        color:white;
+        font-size: 1.3rem;
+        padding:20px;
+        width: 150px;
+    }
+    .singleCountry>.flag>.buttonLight:hover,
+    .singleCountry>.flag>.buttonLight:focus{
+        transform: scale(1.05);
+        background-color: hsl(209, 49%, 26%);
+        color: white;
+        transition: transform 250ms;
+    }
+    .singleCountry>.flag>.buttonDark:hover,
+    .singleCountry>.flag>.buttonDark:focus{
+        transform: scale(1.05);
+        background-color: hsl(209, 49%, 26%);
+        color: white;
+        transition: transform 250ms;
+    }
+    .singleCountry>.flag>.buttonLight:active{
+        transform: scale(1);
+    }
+    .singleCountry>.flag>.buttonDark:active{
+        transform: scale(1);
+    }
+    a:hover,
+    a:focus{
+        transform: scale(1.05);
+        outline: none;
+        transition: transform 300ms;
+    }
+    a:active{
+        transform: scale(1);
+    }
+}
+
+@media(min-width:1400px){
+    .detailsFull{
+        font-size:1.5rem;
+    }
+    .borderCountry{
+        font-size:1.5rem
+    }
+    .borderCountry>p{
+        font-size:1.2rem
+    }
 }

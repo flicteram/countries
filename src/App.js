@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useContext} from 'react'
+import Header from './Header'
+import CountryDetails from './Pages/CountryDetails';
+import Countries from './Pages/Contries';
+import {Switch,Route} from 'react-router-dom'
+import {Context} from './Context'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  const {isDark} = useContext(Context)
+  return(
+    <div className={isDark?'containerDark':'container'}>
+      <Header/>
+      <Switch>
+        <Route exact path='/'>
+          <Countries/>
+        </Route>
+        <Route path="/:countryId">
+          <CountryDetails/>
+        </Route>
+      </Switch>
     </div>
-  );
+  )
 }
 
 export default App;
